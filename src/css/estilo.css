@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color1: #f0f0f0;
+    --color2: #333;
+    --color3: #555;
+    --color4: #3ae4b1;
+    --colorLinear: linear-gradient(purple, aqua);
+    --fontFamily: "Cascadia Code", sans-serif;
+}
+
+body{
+    background: var(--color1);
+    font-family: var(--fontFamily);
+}
+
+header{
+    background: var(--color3);
+    color: var(--color2);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header #logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+}
