@@ -37,6 +37,21 @@ body{
     border-radius:50%;
     animation: rodar 1s ease-in-out;
 }
+@keyframes rodar{
+    0% {
+        transform:rotate(0deg);
+    }
+   50%{
+        transform:rotate(360deg);
+       
+    }
+    80%{
+         transform:translatex(100px);
+    }
+    100{
+        transform:translatex(-100px);
+    }
+}
 
 #titulo{
     font-size:3.5rem;
@@ -75,7 +90,23 @@ body{
     }
 }
 
+/*MENU HAMBURGUER*/
 
+.menu-hamburguer{
+    display:none;
+    flex-direction:column;
+    justify-content: space-around;
+    width:30px;
+    height:25px;
+    cursor:pointer;
+    z-index:1000;
+}
+.menu-hamburguer span{
+    width:100%;
+    height:3px;
+    background:var(--color4);
+    border-radius:10px;
+}
 
 header{
     background:var(--color3);
@@ -123,4 +154,44 @@ header nav ul li a:hover{
     background:var(--colorLinear);
     -webkit-text-fill-color:transparent;
     background-clip:text;
+}
+
+/* RESPONSIVIDADE MENU HAMBURGUER */
+/*BREAKPOINT*/
+
+@media(max-width: 768px){
+    header{
+        position:relative;
+    }
+    .menu-hamburguer{
+        display:flex;
+        position:relative;
+        z-index:1002;
+    }
+    nav{
+        display:none !important;
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:var(--color2);
+        flex-direction:column;
+        padding: 20px;
+        z-index:1001;
+        border-radius:30px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    nav.active{
+        display:flex !important;
+    }
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+    }
+    /*efeito para transformar o menu em X*/
+    .open span:nth-child(1){transform:rotate(45deg)translate(5px,5px);}
+    .open span:nth-child(2){opacity:0;}
+    .open span:nth-child(3){transform:rotate(-45deg)translate(7px,-7px);}
+
 }
